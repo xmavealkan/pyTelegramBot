@@ -27,7 +27,7 @@ def help_func(message):
     url_button.add(types.InlineKeyboardButton("Жми сюда пупсик",
                    url='https://t.me/relaxrum'))
     bot.send_message(
-        message.chat.id, f"Этим каналом автор дорожит если хочешь подпишись)", reply_markup=url_button)
+        message.chat.id, f"Этим каналом автор очень дорожит если хочешь подпишись)", reply_markup=url_button)
 
 
 # @bot.message_handler(commands=['exit'])
