@@ -98,18 +98,22 @@ def handle_text(message):
             bot.send_message(message.chat.id, "It's a tie")
             bot.send_message(
                 message.chat.id, f"{computer_score}:{user_score}")
+            print(message.from_user.first_name,
+                  f" it's tie {computer_score}:{user_score}")
         elif (message.text.lower() == 'rock' and computer_move == 'scissors') or (message.text.lower() == 'paper' and computer_move == 'rock') or (message.text.lower() == 'scissors' and computer_move == 'paper'):
             user_score += 1
             bot.send_message(message.chat.id, 'Score for human')
             bot.send_message(
                 message.chat.id, f"{computer_score}:{user_score}")
-            print(message.chat.id, f"{computer_score}:{user_score}")
+            print(message.from_user.first_name,
+                  f"{computer_score}:{user_score}")
         else:
             computer_score += 1
-            bot.send_message(message.chat.id, 'Score for bot')
+            bot.send_message(message, 'Score for bot')
             bot.send_message(
                 message.chat.id, f"{computer_score}:{user_score}")
-            print(message.chat.id, f"{computer_score}:{user_score}")
+            print(message.from_user.first_name,
+                  f"{computer_score}:{user_score}")
         if user_score >= 3:
             bot.send_message(
                 message.chat.id, f"Winner is human, computer is the loser. User score: {user_score}")
