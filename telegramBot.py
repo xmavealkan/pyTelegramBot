@@ -5,7 +5,7 @@ from telebot import types
 bot = telebot.TeleBot("6129194736:AAFrw3Mh6t0YMtWoxSf_LYrHdGWI2V_WD5M")
 
 moves = ['rock', 'paper', 'scissors']
-track_data = ['z', 'x']
+track_data = ['quit']
 user_score = 0
 computer_score = 0
 
@@ -103,12 +103,13 @@ def handle_text(message):
             bot.send_message(message.chat.id, 'Score for human')
             bot.send_message(
                 message.chat.id, f"{computer_score}:{user_score}")
+            print(message.chat.id, f"{computer_score}:{user_score}")
         else:
             computer_score += 1
             bot.send_message(message.chat.id, 'Score for bot')
             bot.send_message(
                 message.chat.id, f"{computer_score}:{user_score}")
-
+            print(message.chat.id, f"{computer_score}:{user_score}")
         if user_score >= 3:
             bot.send_message(
                 message.chat.id, f"Winner is human, computer is the loser. User score: {user_score}")
